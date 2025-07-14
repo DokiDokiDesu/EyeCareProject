@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>eye care project</title>
+    <title>EyeCareProject</title>
     <link rel="stylesheet" href="eye-care-style.css">
   </head>
 
@@ -21,6 +21,14 @@
           <input type="number" min="1" id="rest-time" class="rest-timer">
           <label for="rest-time">Set rest timer(sec)</label>
         </div>
+
+        <label style="display: flex; align-items: center; gap: 15px;margin-left: 15px;">
+          <input type="checkbox" name="sound-effects" value="true" checked>
+          Sound effects
+        </label>
+
+        <button class="cycle-reset">Reset cycle counter</button>
+
         <div class="settings-buttons">
           <button onclick="
               saveAndQuit();
@@ -36,7 +44,8 @@
           display: none;
         ">
         <button class="close-info">X</button>
-        <p>testing updates</p>
+        <h1 class="info-title">Information</h1>
+        <p class="info"></p>
       </div>
 
      <div class="upper-row">

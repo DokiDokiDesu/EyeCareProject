@@ -1,3 +1,5 @@
+let info = 'EyeCareProject is designed to reduce eye strain while using computers caused by focusing on something from the same distance for too long.This program is designed to apply 20/20/20 rule while using a computer.User should focus onto something 20 meters far away for 20 seconds once every 20 minutes.';
+
 let remainingSeconds = 1200;
 let restRemainingSeconds = 20;
 let newInputSeconds = 0;
@@ -6,6 +8,8 @@ let intervalId = null;
 let cycleCount = 0;
 let timer;
 const audio = document.querySelector('.sound-effect');
+
+document.querySelector('.info').innerHTML = info;
 
 function startTimer() {
   if(document.querySelector('.start-button').style.display = 'none') {
@@ -162,8 +166,16 @@ function displaySettings(){
   document.getElementById("rest-time").value = restRemainingSeconds;
 }
 function saveAndQuit() {
-   newInputSeconds = document.getElementById("run-time").value * 60;
+  let userInputMinute;
+  userInputMinute = document.getElementById("run-time").value;
+
+  if(userInputMinute < 1) {
+    alert('run time input cannot be less than a minute');
+  } else {
+
+   newInputSeconds = userInputMinute * 60;
    newInputRest = document.getElementById("rest-time").value;
+
   remainingSeconds = newInputSeconds;
   restRemainingSeconds = newInputRest;
 
@@ -172,6 +184,7 @@ function saveAndQuit() {
     const minute = Math.floor(remainingSeconds / 60);
     const second = remainingSeconds % 60;
   document.querySelector('.timer').innerHTML = `${String(minute).padStart(2, '0')}:${String(second).padStart(2, '0')}`;
+  }
 }
 
 function restoreToDefault() {
