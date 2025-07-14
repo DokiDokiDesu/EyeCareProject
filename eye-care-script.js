@@ -73,7 +73,7 @@ function pauseTimer() {
 function resetTimer() {
   clearInterval(timer);
   stopSound();
-  cycleCount = 0;
+  // cycleCount = 0; deneme
   updateCycleCounter();
   
   if(newInputSeconds !== 0) {
@@ -185,6 +185,10 @@ function saveAndQuit() {
     const second = remainingSeconds % 60;
   document.querySelector('.timer').innerHTML = `${String(minute).padStart(2, '0')}:${String(second).padStart(2, '0')}`;
   }
+}
+function resetCycleCounter() {
+  cycleCount = 0;
+  updateCycleCounter();
 }
 
 function restoreToDefault() {
