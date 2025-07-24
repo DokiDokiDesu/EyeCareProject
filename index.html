@@ -2,30 +2,41 @@
 <html>
   <head>
     <title>EyeCareProject</title>
-    <link rel="stylesheet" href="eye-care-style.css">
+    <link id="theme" rel="stylesheet" href="eye-care-style.css">
   </head>
 
   <body>
     <audio class="sound-effect" src="sound-effect.mp3"></audio>
     <div class="main">
       <div class="settings-menu">
-        <h2 style="
+        <h2 class="settings-text" style="
             align-self: center;
             font-size: 30px;
           ">Settings</h2>
         <div>
           <input type="number" min="1" id="run-time" class="run-timer">
-          <label for="run-time">Set running timer(min)</label>
+          <label class="running-time-text" for="run-time">Set running timer(min)</label>
         </div>
         <div>
           <input type="number" min="1" id="rest-time" class="rest-timer">
-          <label for="rest-time">Set rest timer(sec)</label>
+          <label class="rest-timer-text" for="rest-time">Set rest timer(sec)</label>
         </div>
 
-        <label style="display: flex; align-items: center; gap: 15px;margin-left: 15px;">
-          <input type="checkbox" name="sound-effects" value="true" checked>
-          Sound effects
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <label class="switch">
+        <input class="checkbox-sound-effects" type="checkbox">
+        <span class="slider"></span>
         </label>
+        <span class="label-text-sound-effects">Sound effects</span>
+      </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <label class="switch">
+          <input class="checkbox-dark-mode" type="checkbox">
+          <span class="slider"></span>
+          </label>
+          <span class="label-text-dark-mode">Enable dark mode</span>
+        </div>
 
         <button onclick="
         resetCycleCounter();
@@ -55,11 +66,11 @@
        <h2 class="header"> EyeCare Project</h2>
        <button onclick="
           displayInfo();
-       " class ="info-button">&#8505;</button>
+       " class ="info-button"><span class="info-symbol">&#8505;</span></button>
 
        <button onclick="
           displaySettings();
-       " class="settings-button">&#9881;</button>
+       " class="settings-button"><span class="settings-symbol">&#9881;</span></button>
      </div>
       <h1 class="rest-alert">Start Counting</h1>
       <h1 class="timer">00:10</h1>

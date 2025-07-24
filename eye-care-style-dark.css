@@ -1,5 +1,8 @@
+body {
+  background-color: #3b3b3b;
+}
 .main {
-  background-color: rgb(241, 238, 238);
+  background-color: rgb(26, 25, 25);
   width: 500px;
   display: flex;
   flex-direction: column;
@@ -13,7 +16,7 @@
 .settings-menu {
   position: absolute;
   z-index: 10;
-  background-color: rgb(219, 221, 221);
+  background-color: rgb(26, 25, 25);
   width: 500px;
   height: 330px;
   display: none; /*none olarak değişecek*/
@@ -24,10 +27,13 @@
   border-width: 1px;
  
 }
+.settings-text,.running-time-text,.rest-timer-text,.label-text-dark-mode,.label-text-sound-effects {
+  color: white;
+}
 .info-page {
   position: absolute;
   z-index: 10;
-  background-color: rgb(219, 221, 221);
+  background-color: rgb(26, 25, 25);
   width: 500px;
   height: 330px;
   display: none; /*none olarak değişecek*/
@@ -36,12 +42,19 @@
   transition: 0.3s;
   border-style: solid;
   border-width: 1px;
+  color: white;
 }
 .info-title {
   margin-left: 160px;
 }
 .info {
   padding: 20px;
+}
+.info-symbol {
+  color: rgb(218, 216, 216);
+}
+.settings-symbol {
+  color: rgb(218, 216, 216);
 }
 .close-info {
   position: absolute;
@@ -50,16 +63,21 @@
   width: fit-content;
   height: fit-content;
   margin:4px 5px 0 0;
-  color: white;
-  background-color:rgb(212, 52, 52);
+  background-color: rgb(177, 177, 177);
+  color: rgb(54, 54, 54);
   border-style: solid;
-  border-color: rgb(212, 52, 52);
+ 
   border-width: 1px;
 }
 .close-info:hover {
-  color:rgb(212, 52, 52);
-  background-color: white;
-  border-color: rgb(212, 52, 52);
+  background-color: rgb(54, 54, 54);
+   color:white;
+   border-color: white;
+   border-style: solid;
+   border-width: 2px;
+   transition: 0.2s;
+   cursor: pointer;
+  
   border-style: solid;
   border-width: 1px;
   transition: 0.3s;
@@ -68,7 +86,7 @@
   background-color: rgb(77, 250, 8);
   color: white;
 }
- .switch {
+.switch {
     position: relative;
     display: inline-block;
     width: 50px;
@@ -84,7 +102,7 @@
   .slider {
     position: absolute;
     cursor: pointer;
-    background-color: #ccc;
+    background-color: #a5a5a5;
     border-radius: 34px;
     top: 0;
     left: 0;
@@ -100,13 +118,13 @@
     width: 22px;
     left: 3px;
     bottom: 3px;
-    background-color: white;
+    background-color: rgb(126, 125, 125);
     border-radius: 50%;
     transition: 0.4s;
   }
 
   input:checked + .slider {
-    background-color: #4CAF50;
+    background-color: rgb(240, 240, 240)
   }
 
   input:checked + .slider::before {
@@ -115,24 +133,29 @@
 .cycle-reset {
   width: fit-content;
   height: 35px;
-  background-color:rgb(231, 212, 40);
-  color: white;
+  background-color:rgb(177, 177, 177);
+  color: rgb(54, 54, 54); 
   border-style: solid;
-  border-color: rgb(231, 212, 40);
+  border-color:rgb(177, 177, 177); ;
   border-width: 2px;
 }
 .cycle-reset:hover {
-  background-color: white;
-  color: rgb(231, 212, 40);
-  transition: 0.3s;
+   background-color: rgb(54, 54, 54);
+   color:white;
+   border-color: rgb(54, 54, 54);
+   border-style: solid;
+   border-width: 2px;
+   transition: 0.2s;
+   cursor: pointer;
 }
 .save-and-quit:hover {
-  background-color: white;
-  color:  rgb(77, 250, 8);
-  cursor: pointer;
-  border-style: solid;
-  border-width: 1px;
-  transition: 0.3s;
+   background-color: rgb(54, 54, 54);
+   color:white;
+   border-color: rgb(54, 54, 54);
+   border-style: solid;
+   border-width: 2px;
+   transition: 0.2s;
+   cursor: pointer;
   
 }
 .restore-default {
@@ -140,12 +163,13 @@
   color: white;
 }
 .restore-default:hover {
-  background-color: white;
-  color:  rgb(197, 5, 5);
-  cursor: pointer;
-  border-style: solid;
-  border-width: 1px;
-  transition: 0.3s;
+    background-color: rgb(54, 54, 54);
+   color:white;
+   border-color: rgb(54, 54, 54);
+   border-style: solid;
+   border-width: 2px;
+   transition: 0.2s;
+   cursor: pointer;
 }
 .run-timer {
   margin-left: 5px;
@@ -160,11 +184,21 @@
   margin-bottom: 15px;
   align-self:center;
 }
+.settings-button {
+  background-color: rgb(26, 25, 25);
+}
+.info-button{
+  background-color: rgb(26, 25, 25);
+}
 .save-and-quit {
   width:fit-content;
+  background-color:rgb(177, 177, 177);
+  color: rgb(54, 54, 54);
 }
 .restore-default {
 width: fit-content;
+background-color:rgb(177, 177, 177);
+color: rgb(54, 54, 54);
 }
 .upper-row {
   display: flex;
@@ -176,6 +210,7 @@ width: fit-content;
 
 .cycle-counter {
   margin-left: 10px;
+  color: rgb(221, 219, 219);
 }
 
 .header {
@@ -183,6 +218,7 @@ width: fit-content;
   text-align: center;
   flex: 1;
   margin-right: 50px;
+  color: rgb(221, 219, 219);
   
 }
 .settings-button {
@@ -236,12 +272,15 @@ width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
+  color:rgb(221, 219, 219);
+
 }
 .timer {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 50px;
+  color: rgb(221, 219, 219);
 }
 .buttons {
   display: flex;
@@ -264,37 +303,41 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
   justify-content: center;
   width: 140px;
   cursor: pointer;
-  background-color: rgb(231, 212, 40);
+  background-color: rgb(177, 177, 177);
+  color:rgb(54, 54, 54);
 }
 .skip-rest-button:hover {
-  border:solid;
-  background-color: white;
-  border-color:rgb(231, 212, 40) ;
-  border-width: 2px;
-  transition: 0.2s;
-  cursor: pointer;
+   background-color: rgb(54, 54, 54);
+   color:white;
+   border-color: white;
+   border-style: solid;
+   border-width: 2px;
+   transition: 0.2s;
+   cursor: pointer;
 }
 .start-button {
-  background-color: rgb(77, 250, 8);
-  color: white;
+  background-color: rgb(177, 177, 177);
+  color: rgb(54, 54, 54);
 }
 .start-button:hover {
-   background-color: white;
-   color:rgb(77, 250, 8);
+   background-color: rgb(54, 54, 54);
+   color:white;
+   border-color: white;
    border-style: solid;
    border-width: 2px;
    transition: 0.2s;
    cursor: pointer;
 }
 .reset-button {
-  background-color:rgb(197, 5, 5);
-  color: white;
+  background-color:rgb(177, 177, 177);
+  color: rgb(54, 54, 54);
 }
 .reset-button:hover {
-  background-color: white;
-  color:rgb(197, 5, 5);
-  border-style: solid;
-  border-width: 2px;
-  transition: 0.2s;
-  cursor: pointer;
+   background-color: rgb(54, 54, 54);
+   color:white;
+   border-color: white;
+   border-style: solid;
+   border-width: 2px;
+   transition: 0.2s;
+   cursor: pointer;
 }

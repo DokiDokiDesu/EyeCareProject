@@ -213,3 +213,14 @@ function displayInfo() {
 document.querySelector('.close-info').addEventListener('click',()=>{
   document.querySelector('.info-page').style.display ="none";
 });
+
+const checkboxDarkMode = document.querySelector('.checkbox-dark-mode');
+
+checkboxDarkMode.addEventListener('change',function(){
+  if(this.checked) {
+    document.getElementById('theme').href = 'eye-care-style-dark.css';
+  }
+  else {
+    document.getElementById('theme').href = 'eye-care-style.css';
+  }
+});
